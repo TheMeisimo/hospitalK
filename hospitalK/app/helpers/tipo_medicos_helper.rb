@@ -1,0 +1,2 @@
+module TipoMedicosHelper
+end

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @consultorio.nombre %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @consultorio.codigo %>
+</p>
+
+<p>
+  <strong>Ubicacion:</strong>
+  <%= @consultorio.ubicacion %>
+</p>
+
+<p>
+  <strong>Tipo consultorio:</strong>
+  <%= @consultorio.tipo_consultorio %>
+</p>
+
+<%= link_to 'Edit', edit_consultorio_path(@consultorio) %> |
+<%= link_to 'Back', consultorios_path %>

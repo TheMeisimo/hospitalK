@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Consultorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Codigo</th>
+      <th>Ubicacion</th>
+      <th>Tipo consultorio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @consultorios.each do |consultorio| %>
+      <tr>
+        <td><%= consultorio.nombre %></td>
+        <td><%= consultorio.codigo %></td>
+        <td><%= consultorio.ubicacion %></td>
+        <td><%= consultorio.tipo_consultorio %></td>
+        <td><%= link_to 'Show', consultorio %></td>
+        <td><%= link_to 'Edit', edit_consultorio_path(consultorio) %></td>
+        <td><%= link_to 'Destroy', consultorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Consultorio', new_consultorio_path %>

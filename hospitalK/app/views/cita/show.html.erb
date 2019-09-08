@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Consultorio:</strong>
+  <%= @citum.consultorio %>
+</p>
+
+<p>
+  <strong>Paciente:</strong>
+  <%= @citum.paciente %>
+</p>
+
+<p>
+  <strong>Medico:</strong>
+  <%= @citum.medico %>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @citum.fecha %>
+</p>
+
+<p>
+  <strong>Hora inicio:</strong>
+  <%= @citum.hora_inicio %>
+</p>
+
+<p>
+  <strong>Hora fin:</strong>
+  <%= @citum.hora_fin %>
+</p>
+
+<p>
+  <strong>Motivo:</strong>
+  <%= @citum.motivo %>
+</p>
+
+<%= link_to 'Edit', edit_citum_path(@citum) %> |
+<%= link_to 'Back', cita_path %>

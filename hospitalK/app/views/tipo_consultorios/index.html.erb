@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Tipo Consultorios</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipo_consultorios.each do |tipo_consultorio| %>
+      <tr>
+        <td><%= tipo_consultorio.nombre %></td>
+        <td><%= link_to 'Show', tipo_consultorio %></td>
+        <td><%= link_to 'Edit', edit_tipo_consultorio_path(tipo_consultorio) %></td>
+        <td><%= link_to 'Destroy', tipo_consultorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipo consultorio', new_tipo_consultorio_path %>

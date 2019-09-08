@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cita</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Consultorio</th>
+      <th>Paciente</th>
+      <th>Medico</th>
+      <th>Fecha</th>
+      <th>Hora inicio</th>
+      <th>Hora fin</th>
+      <th>Motivo</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cita.each do |citum| %>
+      <tr>
+        <td><%= citum.consultorio %></td>
+        <td><%= citum.paciente %></td>
+        <td><%= citum.medico %></td>
+        <td><%= citum.fecha %></td>
+        <td><%= citum.hora_inicio %></td>
+        <td><%= citum.hora_fin %></td>
+        <td><%= citum.motivo %></td>
+        <td><%= link_to 'Show', citum %></td>
+        <td><%= link_to 'Edit', edit_citum_path(citum) %></td>
+        <td><%= link_to 'Destroy', citum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Citum', new_citum_path %>
