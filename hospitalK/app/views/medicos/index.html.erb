@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Medicos</h1>
+<h1>Lista de Medicos</h1>
 
 <table>
   <thead>
@@ -21,7 +21,7 @@
         <td><%= medico.apellidos %></td>
         <td><%= medico.documento %></td>
         <td><%= medico.celular %></td>
-        <td><%= medico.tipo_medico %></td>
+        <td><%= medico.tipo_medico.nombre %></td>
         <td><%= link_to 'Show', medico %></td>
         <td><%= link_to 'Edit', edit_medico_path(medico) %></td>
         <td><%= link_to 'Destroy', medico, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Medico', new_medico_path %>
+<%= link_to 'Nuevo Medico', new_medico_path %>

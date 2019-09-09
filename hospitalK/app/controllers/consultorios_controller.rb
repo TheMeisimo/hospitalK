@@ -15,6 +15,7 @@ class ConsultoriosController < ApplicationController
   # GET /consultorios/new
   def new
     @consultorio = Consultorio.new
+    @tipos_consultorio = TipoConsultorio.all
   end
 
   # GET /consultorios/1/edit
@@ -27,7 +28,7 @@ class ConsultoriosController < ApplicationController
     @consultorio = Consultorio.new(consultorio_params)
 
     respond_to do |format|
-      if @consultorio.save
+      if @consultorio.validSave
         format.html { redirect_to @consultorio, notice: 'Consultorio was successfully created.' }
         format.json { render :show, status: :created, location: @consultorio }
       else

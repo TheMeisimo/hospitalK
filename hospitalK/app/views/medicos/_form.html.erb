@@ -29,7 +29,14 @@
   </div>
   <div class="field">
     <%= f.label :tipo_medico_id %><br>
-    <%= f.text_field :tipo_medico_id %>
+    <select class="select" name="medico[tipo_medico_id]">
+        <option value=""> Seleccione... </option>
+        <% @tipos_medico.each do |tipo_medico| %>
+          <option value="<%= tipo_medico.id %>">
+            <%= tipo_medico.nombre %>
+          </option>
+        <% end %>
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>

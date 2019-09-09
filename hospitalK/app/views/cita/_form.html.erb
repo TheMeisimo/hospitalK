@@ -10,18 +10,38 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
     <%= f.label :consultorio_id %><br>
-    <%= f.text_field :consultorio_id %>
+    <select class="select" name="citum[consultorio_id]">
+        <option value=""> Seleccione... </option>
+        <% @consultorios.each do |consultorio| %>
+          <option value="<%= consultorio.id %>">
+            <%= consultorio.nombre %>
+          </option>
+        <% end %>
+    </select>
   </div>
   <div class="field">
     <%= f.label :paciente_id %><br>
-    <%= f.text_field :paciente_id %>
+    <select class="select" name="citum[paciente_id]">
+        <option value=""> Seleccione... </option>
+        <% @pacientes.each do |paciente| %>
+          <option value="<%= paciente.id %>">
+            <%= paciente.nombres %> <%= paciente.apellidos %>
+          </option>
+        <% end %>
+    </select>
   </div>
   <div class="field">
     <%= f.label :medico_id %><br>
-    <%= f.text_field :medico_id %>
+    <select class="select" name="citum[medico_id]">
+        <option value=""> Seleccione... </option>
+        <% @medicos.each do |medico| %>
+          <option value="<%= medico.id %>">
+            <%= medico.nombres %> <%= medico.apellidos %>
+          </option>
+        <% end %>
+    </select>
   </div>
   <div class="field">
     <%= f.label :fecha %><br>

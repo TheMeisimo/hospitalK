@@ -25,7 +25,14 @@
   </div>
   <div class="field">
     <%= f.label :tipo_consultorio_id %><br>
-    <%= f.text_field :tipo_consultorio_id %>
+    <select class="select" name="consultorio[tipo_consultorio_id]">
+        <option value=""> Seleccione... </option>
+        <% @tipos_consultorio.each do |tipo_consultorio| %>
+          <option value="<%= tipo_consultorio.id %>">
+            <%= tipo_consultorio.nombre %>
+          </option>
+        <% end %>
+    </select>
   </div>
   <div class="actions">
     <%= f.submit %>

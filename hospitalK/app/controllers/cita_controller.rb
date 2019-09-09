@@ -14,7 +14,10 @@ class CitaController < ApplicationController
 
   # GET /cita/new
   def new
-    @citum = Citum.new
+    @citum        = Citum.new
+    @medicos      = Medico.all
+    @consultorios = Consultorio.all
+    @pacientes    = Paciente.all
   end
 
   # GET /cita/1/edit

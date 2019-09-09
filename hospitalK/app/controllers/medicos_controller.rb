@@ -15,6 +15,7 @@ class MedicosController < ApplicationController
   # GET /medicos/new
   def new
     @medico = Medico.new
+    @tipos_medico = TipoMedico.all
   end
 
   # GET /medicos/1/edit

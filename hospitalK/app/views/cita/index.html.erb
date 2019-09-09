@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Cita</h1>
+<h1>Lista de Cita</h1>
 
 <table>
   <thead>
@@ -19,9 +19,9 @@
   <tbody>
     <% @cita.each do |citum| %>
       <tr>
-        <td><%= citum.consultorio %></td>
-        <td><%= citum.paciente %></td>
-        <td><%= citum.medico %></td>
+        <td><%= citum.consultorio.nombre %></td>
+        <td><%= citum.paciente.nombres %>  <%= citum.paciente.apellidos %></td>
+        <td><%= citum.medico.nombres %>  <%= citum.medico.apellidos %></td>
         <td><%= citum.fecha %></td>
         <td><%= citum.hora_inicio %></td>
         <td><%= citum.hora_fin %></td>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Citum', new_citum_path %>
+<%= link_to 'Nuevo Citas', new_citum_path %>
