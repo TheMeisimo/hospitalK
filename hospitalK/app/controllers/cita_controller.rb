@@ -5,6 +5,9 @@ class CitaController < ApplicationController
   # GET /cita.json
   def index
     @cita = Citum.all
+    @cita.each do |cita|
+      cita.hora_fin = Time.at(cita.hora_fin - cita.hora_inicio + 3600*5)
+    end
   end
 
   # GET /cita/1
@@ -30,7 +33,7 @@ class CitaController < ApplicationController
     @citum = Citum.new(citum_params)
 
     respond_to do |format|
-      if @citum.save
+      if @citum.validSave
         format.html { redirect_to @citum, notice: 'Citum was successfully created.' }
         format.json { render :show, status: :created, location: @citum }
       else
@@ -44,7 +47,7 @@ class CitaController < ApplicationController
   # PATCH/PUT /cita/1.json
   def update
     respond_to do |format|
-      if @citum.update(citum_params)
+      if @citum.validUpdate(citum_params)
         format.html { redirect_to @citum, notice: 'Citum was successfully updated.' }
         format.json { render :show, status: :ok, location: @citum }
       else
